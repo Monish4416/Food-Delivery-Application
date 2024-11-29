@@ -3,6 +3,7 @@ import "./Navbar.css"
 import {assets} from "../../assets/frontend_assets/assets"
 import {Link, useNavigate} from "react-router-dom"
 import { StoreContext } from '../../context/StoreContext'
+import { toast } from 'react-toastify'
 
 const Navbar = ({setShowLogin}) => {
 
@@ -16,6 +17,7 @@ const Navbar = ({setShowLogin}) => {
       localStorage.removeItem("token");
       setToken("");
       navigate("/")
+      toast.success("Logout Successfully...")
     }
 
   return (
