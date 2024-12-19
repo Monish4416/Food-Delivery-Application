@@ -3,6 +3,7 @@ import "./PlaceOrder.css"
 import { StoreContext } from '../../context/StoreContext'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 
 const PlaceOrder = () => {
@@ -55,11 +56,11 @@ const PlaceOrder = () => {
 
   useEffect(()=>{
     if(!token){
-      alert("Please login first...")
+      toast.error("Please login first...!")
       navigate("/cart")
       
     }else if(getTotalCartAmount()===0){
-      alert("Cart is empty...")
+      toast.error("Cart is empty...!")
       navigate("/cart")
     }
   },[token])

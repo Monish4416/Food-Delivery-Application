@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <>
-     <ToastContainer />
+     <ToastContainer position='bottom-right' autoClose={1500} />
     {
       showLogin ? <LoginPopup setShowLogin={setShowLogin} /> :<></>
     }
